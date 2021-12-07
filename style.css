@@ -12,9 +12,11 @@ body{
     display: flex;
     justify-content: center;
     align-content: center;
+    height: 100%;
 }
 
-.gallery{
+.galary{
+    margin: auto;
     border-radius: 5px;
     background-color: lightgray;
     padding: 1rem;
@@ -31,8 +33,8 @@ body{
     display: flex;
     justify-content:space-evenly; 
     border-radius: 5px;
-    margin-top: .2rem;
-    padding: .5rem 0;
+    margin: .2rem 0;
+    padding: .5rem;
     line-height: 0;
     background-color: white;
 }
@@ -52,18 +54,20 @@ body{
 
 .nav{
     display: flex;
-    justify-content: space-between;
     margin-top: .2rem;
-    background-color: lightgray;
+    padding-top: .5rem;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,0);
 }
 
 .navigation{
     display: flex;
-    background-color: lightgray;
+    background-color: rgba(0,0,0,0);
 }
 
 .button{
-    margin: .5rem;
+    font-weight: bold;
+    margin: 0 .5rem;
     padding: .5rem;
     border-radius: 5px;
     cursor: pointer;
@@ -74,8 +78,4 @@ body{
 .button:hover,
 .button:focus{
     background-color: rgb(133, 186, 255);
-}
-
-#previous{
-
 }
