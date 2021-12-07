@@ -7,3 +7,75 @@
     background-color: rgb(59, 59, 59);
     font-family: "Montserrat", sans-serif;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.gallery{
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 1rem;
+}
+
+.showing{
+    padding: .5rem;
+    border-radius: 5px;
+    line-height: 0;
+    background-color: white;
+}
+
+.preview{
+    display: flex;
+    justify-content:space-evenly; 
+    border-radius: 5px;
+    margin-top: .2rem;
+    padding: .5rem 0;
+    line-height: 0;
+    background-color: white;
+}
+
+.preview div{
+    transition: all .2s ease 0s;
+    opacity: 40%;
+    cursor: pointer;
+}
+
+.preview div:hover,
+.preview div:focus{
+    opacity: 100%;
+    transform: scale(1.1);
+    box-shadow: 3px 3px 5px gray;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .2rem;
+    background-color: lightgray;
+}
+
+.navigation{
+    display: flex;
+    background-color: lightgray;
+}
+
+.button{
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(168, 204, 250);
+    transition: all .2s ease 0s;
+}
+
+.button:hover,
+.button:focus{
+    background-color: rgb(133, 186, 255);
+}
+
+#previous{
+
+}
