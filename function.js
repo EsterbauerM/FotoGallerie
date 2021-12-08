@@ -2,17 +2,20 @@ var pics = new Array("/pics/img_01.jpg", "/pics/img_02.jpg", "/pics/img_03.jpg",
 var thumb = new Array("/pics/thumb_01.jpg", "/pics/thumb_02.jpg", "/pics/thumb_03.jpg", "/pics/thumb_04.jpg", "/pics/thumb_05.jpg", "/pics/thumb_06.jpg");
 
 var pos=0;
-var running=0;
+let running=true;
+var time=2000;
 
 window.onload = function (){
 
     document.getElementById ("previous").onclick = previousImg;
 
-	document.getElementById("slideshow").onclick = slideshow;
+    document.getElementById("slideshow").onclick = stop;
 
     document.getElementById("next").onclick = nextImg;
 
-    showing();
+    document.getElementsByClassName("preview").onclick = showing;
+
+    document.getElementById("input").onclick= changeTiming;
 }
 
 function showing(){
@@ -37,7 +40,18 @@ function previousImg(){
     showing();
 }
 
-function slideshow(){
+let interval = null;
+function stop(){
+    time = document.getElementById("input").value;
+
+    if(interval === null){
+            interval = window.setInterval(() => {nextImg() },time)
+            nextImg()
+
+    } else {
+        window.clearInterval(interval);
+        interval = null;
+    }
 }
 
 function nextImg(){
@@ -46,4 +60,9 @@ function nextImg(){
         pos=0;
     document.getElementById("showing_img").src = pics[pos];
     showing();
+}
+
+function changeTiming(){
+    time = document.getElementById("input").value;
+    
 }

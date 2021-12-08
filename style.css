@@ -47,7 +47,7 @@ html,body{
 
 .preview div:hover,
 .preview div:focus{
-    opacity: 100%;
+    opacity: 100% !important;
     transform: scale(1.1);
     box-shadow: 3px 3px 5px gray;
 }
@@ -62,20 +62,44 @@ html,body{
 
 .navigation{
     display: flex;
-    background-color: rgba(0,0,0,0);
+    background-color: lightgray;
+}
+
+.settings{
+    display: flex;
+    background-color: lightgray;
+}
+
+#input{
+    font-weight: bold;
+    font-size: 1em;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
 }
 
 .button{
-    font-weight: bold;
+    height: 3rem;
     margin: 0 .5rem;
-    padding: .5rem;
-    border-radius: 5px;
     cursor: pointer;
-    background-color: rgb(168, 204, 250);
     transition: all .2s ease 0s;
+    background-color: rgb(168, 204, 250);
+    border-radius: 5px;
 }
 
 .button:hover,
 .button:focus{
-    background-color: rgb(133, 186, 255);
+    background-color: rgb(106, 160, 230);
+}
+
+.time{
+    color: gray;
+    font-style: italic;
+    height: 3rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+    transition: all .2s ease 0s;
+    background-color: rgb(168, 204, 250);
+    border-radius: 5px;
 }
