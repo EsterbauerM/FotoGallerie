@@ -38,10 +38,6 @@ function previousImg(){
 }
 
 function slideshow(){
-    running=1;
-    do{
-        var interval = setInterval(nextImg(), 3000);
-    }while(1)
 }
 
 function nextImg(){
