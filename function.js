@@ -73,13 +73,18 @@ function changeTiming(){
 let open = true;
 function collapse(){
     if(open === true){
-        document.querySelector(".preview").style.transform="scaleZ(0)";
-        document.querySelector(".preview").style.opacity=0;
-        
-        open = false;        
+        document.querySelector(".preview").style.opacity="0";
+        setTimeout(() => {
+            document.querySelector(".preview").style.display="none";
+            document.querySelector(".galary").style.transform="translateY(8%)";
+        }, 400);
+        open = false;
     } else{
-        document.querySelector(".preview").style.transform="scaleZ(1)";
-        document.querySelector(".preview").style.opacity=1;
+        document.querySelector(".preview").style.opacity="1";
+        setTimeout(() => {
+            document.querySelector(".preview").style.display="flex";
+            document.querySelector(".galary").style.transform="translateY(0)";
+        }, 200);
         open = true;
     }
 }
