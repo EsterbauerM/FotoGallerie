@@ -6,6 +6,7 @@
     padding: 0;
     background-color: rgb(59, 59, 59);
     font-family: "Montserrat", sans-serif;
+    user-select: none;
 }
 
 html,body{
@@ -14,11 +15,14 @@ html,body{
     align-content: center;
     height: 100%;
 }
-
+img {
+    max-width: 100%;
+}
 .galary{
     margin: auto;
     border-radius: 5px;
     background-color: lightgray;
+    
     padding: 1rem;
     transition: all .2s ease 0s;
 }
@@ -28,12 +32,16 @@ html,body{
     border-radius: 5px;
     line-height: 0;
     background-color: white;
+    transition: all .2s ease 0s;
+    position: relative;
+    bottom: 0;
 }
 
 .preview{
     display: flex;
     justify-content:space-evenly; 
     border-radius: 5px;
+    transform-origin: bottom;
     margin: .2rem 0;
     padding: .5rem 0;
     line-height: 0;

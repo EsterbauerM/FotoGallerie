@@ -71,20 +71,19 @@ function changeTiming(){
 }
 
 let open = true;
+
 function collapse(){
-    if(open === true){
-        document.querySelector(".preview").style.opacity="0";
-        setTimeout(() => {
-            document.querySelector(".preview").style.display="none";
-            document.querySelector(".galary").style.transform="translateY(8%)";
-        }, 400);
+    if(open){
+        document.querySelector(".preview").style.transform = 'scaleY(0)'
+        document.querySelector(".showing").style.bottom = '-50px'
+        document.getElementById("line").src="/icons/plus.png";
+        
         open = false;
     } else{
-        document.querySelector(".preview").style.opacity="1";
-        setTimeout(() => {
-            document.querySelector(".preview").style.display="flex";
-            document.querySelector(".galary").style.transform="translateY(0)";
-        }, 200);
+        document.querySelector(".preview").style.transform = 'scaleY(1)'
+        document.querySelector(".showing").style.bottom = '0'
+        document.getElementById("line").src="/icons/line.png";
+       
         open = true;
     }
 }
