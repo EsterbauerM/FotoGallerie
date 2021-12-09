@@ -18,17 +18,15 @@
             <div id="/pics/thumb_05.jpg" onclick="change_img(04)" ><img src="/pics/thumb_05.jpg" alt=""></div>
             <div id="/pics/thumb_06.jpg" onclick="change_img(05)" ><img src="/pics/thumb_06.jpg" alt=""></div>
         </div>
-        <div class="nav">
-            <div class="settings">
-                <img src="/icons/line.png" alt="" class="button" id="line">
-                <input type="number" class="button" id="input" placeholder="slideshow timing">
-            </div>
-            <div class="navigation">
-                <img src="/icons/left.png" alt="" class="button" id="previous">
-                <img src="/icons/slideshow.png" alt="" class="button" id="slideshow">
-                <img src="/icons/right.png" alt="" class="button" id="next">
-            </div>
-        </div>
+        <nav class="nav">
+            <ul>
+                <li> <img src="/icons/line.png" alt="" class="button" id="line"></li>
+                <li> <input type="number" class="button" id="input" placeholder="slideshow timing" ></li>
+                <li class="push-right"> <img src="/icons/left.png" alt="" class="button" id="previous"></li>
+                <li> <img src="/icons/slideshow.png" alt="" class="button" id="slideshow"></li>
+                <li> <img src="/icons/right.png" alt="" class="button" id="next"></li>
+            </ul>
+        </nav>
     </div>
 
     <script src="function.js"></script>

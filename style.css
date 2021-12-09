@@ -37,6 +37,8 @@ html,body{
     padding: .5rem 0;
     line-height: 0;
     background-color: white;
+    transition: all .2s ease 0s;
+    opacity: 1;
 }
 
 .preview div{
@@ -53,21 +55,23 @@ html,body{
 }
 
 .nav{
-    display: flex;
-    margin-top: .2rem;
-    padding-top: .5rem;
+    margin-top: .5rem;
     justify-content: space-between;
-    background-color: rgba(0,0,0,0);
+    flex-grow: 1;
 }
 
-.navigation{
+.nav ul{
     display: flex;
+    list-style: none;
     background-color: lightgray;
 }
 
-.settings{
-    display: flex;
+.nav li{
     background-color: lightgray;
+}
+
+.push-right{
+    margin-left: auto;
 }
 
 #input{
@@ -77,6 +81,9 @@ html,body{
     display: flex;
     align-items: center;
     border: 1px solid black;
+    color: gray;
+    font-style: italic;
+    cursor: text;
 }
 
 .button{
@@ -91,15 +98,4 @@ html,body{
 .button:hover,
 .button:focus{
     background-color: rgb(106, 160, 230);
-}
-
-.time{
-    color: gray;
-    font-style: italic;
-    height: 3rem;
-    margin: 0 .5rem;
-    cursor: pointer;
-    transition: all .2s ease 0s;
-    background-color: rgb(168, 204, 250);
-    border-radius: 5px;
 }
