@@ -15,6 +15,8 @@ window.onload = function (){
     document.getElementsByClassName("preview").onclick = showing;
 
     document.getElementById("line").onclick=collapse;
+
+    document.getElementById("reset").onclick=resetTiming;
 }
 
 function showing(){
@@ -66,12 +68,11 @@ function nextImg(){
 function changeTiming(){
     if(document.getElementById("input").value!=""){
         time = document.getElementById("input").value;
-        time =parseInt(time);
+        time = parseInt(time);
     }
 }
 
 let open = true;
-
 function collapse(){
     if(open){
         document.querySelector(".preview").style.transform = 'scaleY(0)'
@@ -86,4 +87,12 @@ function collapse(){
        
         open = true;
     }
+}
+
+function resetTiming(){
+    time=2000;
+}
+
+function buttonClick(){
+    document.getElementById("line").style.backgroundColor="black";
 }
