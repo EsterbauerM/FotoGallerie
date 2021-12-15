@@ -92,9 +92,9 @@ function collapse(){
 }
 
 function resetTiming(){
-    time=2000;
-}
+    document.getElementById("input").value="";
+    document.getElementById("slideshow").style.backgroundColor="rgb(168, 204, 250)";
+    window.clearInterval(interval);
 
-function buttonClick(){
-    document.getElementById("line").style.backgroundColor="black";
+    time=2000;
 }

@@ -53,6 +53,7 @@ img {
     opacity: 1;
 }
 
+
 .preview div{
     transition: all .2s ease 0s;
     opacity: 40%;
@@ -119,7 +120,9 @@ img {
 }
 
 
-/* Einzelne Knopf animationen */
+/* NAV animationen */
+
+/*========== PREVIEWS AUSBLENDEN ==========*/
 .line:hover,
 .line:focus{
     transform: scale(1.1);
@@ -128,11 +131,17 @@ img {
     transform: rotate(-90deg);
 } 
 
+.line:hover .button::after{
+    transform: rotate(90deg);
+}
+
+/*========== TIMER INPUT FELD ==========*/
 #input:hover,
 #input:focus{
     transform: scale(1.04);
 }
 
+/*========== TIMER RESET KNOPF ==========*/
 .reset:hover,
 .reset:focus{
     transform: rotate(45deg);
@@ -147,15 +156,20 @@ img {
 .reset:focus .button{
     transform: rotate(315deg);
 }
-
-
+/*========== SLIDESHOW KNOPF ==========*/
 .slideshow:hover,
 .slideshow:focus{
     transform: translateY(-12%) scale(1.06);
     box-shadow: 7px 9px 9px rgb(73, 73, 73), -1px -1px 5px white;
+    transition: all .08s ease-in-out 0s;
 }
 
+.slideshow:active{
+    transform: translateY(-6%) scale(1.04);
+    box-shadow: 6px 7px 9px rgb(73, 73, 73), -2px -2px 5px white;
+}
 
+/*========== LINK-PFEIL KNOPF ==========*/
 .push-right:hover,
 .push-right:focus{
     transform: rotate(-45deg);
@@ -165,7 +179,7 @@ img {
     transform: rotate(45deg) scale(1.2) translateX(-10%);
 }
 
-
+/*========== RECHTS-PFEIL KNOPF ==========*/
 .next:hover,
 .next:focus{
     transform: rotate(45deg);
