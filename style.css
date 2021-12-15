@@ -86,6 +86,27 @@ img {
     margin-left: auto !important;
 }
 
+.line{
+    width: 3rem;
+}
+
+.minus-line{
+    background-color: rgb(0, 0, 0);
+    height: 4px;
+    width: 75%;
+    border-radius: 2px;
+    position: relative;
+}
+.minus-line::after{
+    background-color: red;
+    position:absolute;
+    content: '';
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    transition: all .2s ease 0s;
+}
+
 #input{
     height: 100%;
     background-color: rgb(168, 204, 250);
@@ -114,6 +135,9 @@ img {
 
 .button,
 .button img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     transition: all .2s ease 0s;
     background-color: rgb(168, 204, 250);
@@ -127,11 +151,12 @@ img {
 .line:focus{
     transform: scale(1.1);
 }
-.line:hover .button{
-    transform: rotate(-90deg);
-} 
 
-.line:hover .button::after{
+.line:hover .minus-line{
+    transform: rotate(-90deg);
+}
+
+.line:hover .minus-line::after{
     transform: rotate(90deg);
 }
 

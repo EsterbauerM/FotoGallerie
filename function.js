@@ -14,7 +14,7 @@ window.onload = function (){
 
     document.getElementsByClassName("preview").onclick = showing;
 
-    document.getElementById("line").onclick=collapse;
+    document.querySelector(".line").onclick=collapse;
 
     document.getElementById("reset").onclick=resetTiming;
 }
@@ -75,17 +75,17 @@ function changeTiming(){
 let open = true;
 function collapse(){
     if(open){
-        document.querySelector(".preview").style.transform = 'scaleY(0)'
-        document.querySelector(".showing").style.bottom = '-50px'
-        document.getElementById("line").src="/icons/plus.png";
-        document.querySelector(".line > div, .line > div > img").style.transition = 'none';
+        document.querySelector(".preview").style.transform = 'scaleY(0)';
+        document.querySelector(".showing").style.bottom = '-50px';
+        document.querySelector(".minus-line").style.transform="rotate(90deg)";
+        // document.querySelector(".line > div").style.transition = 'none';
         
         open = false;
     } else{
         document.querySelector(".preview").style.transform = 'scaleY(1)'
         document.querySelector(".showing").style.bottom = '0'
-        document.getElementById("line").src="/icons/line.png";
-        document.querySelector(".line > div, .line > div > img").style.transition = 'all .2s ease 0s';
+        document.querySelector(".minus-line").style.transform="rotate(0deg)";
+        // document.querySelector(".line > div").style.transition = 'all .2s ease 0s';
        
         open = true;
     }
