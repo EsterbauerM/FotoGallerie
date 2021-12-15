@@ -22,10 +22,11 @@ img {
     margin: auto;
     border-radius: 5px;
     background-color: lightgray;
-    
     padding: 1rem;
     transition: all .2s ease 0s;
 }
+
+/* Zeigendes Bild */
 
 .showing{
     padding: .5rem;
@@ -36,6 +37,8 @@ img {
     position: relative;
     bottom: 0;
 }
+
+/* Vorschau Bilder */
 
 .preview{
     display: flex;
@@ -63,44 +66,111 @@ img {
     box-shadow: 3px 3px 5px gray;
 }
 
+/* Navigations Knöpfe/Eingabe */
+
 .nav{
     margin-top: 1.1rem;
     height: 3rem;
 }
 
-.nav ul,li{
+.nav ul{
     display: flex;
     list-style: none;
     background-color: lightgray;
     height: 100%;
 }
 
+/* Damit die vor-/zurück und der Slideshow Knöpfe rechts sind */
 .push-right{
-    margin-left: auto;
+    margin-left: auto !important;
 }
 
 #input{
+    height: 100%;
     background-color: rgb(168, 204, 250);
+    transition: all .2s ease 0s;
     border: 1px solid black;
     border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
     font-style: italic;
     text-align: center;
+    letter-spacing: 1.5px;
     cursor: text;
     margin: 0 .5rem;
+    box-shadow: 3px 3px 8px rgb(73, 73, 73), -3px -3px 8px white;
 }
 
-.button{
+.nav li{
     margin: 0 .5rem;
     cursor: pointer;
     transition: all .2s ease 0s;
-    background-color: rgb(168, 204, 250);
-    box-shadow: 3px 3px 8px rgb(107, 107, 107), -3px -3px 8px white;
     border-radius: 5px;
+    background-color: rgb(168, 204, 250);
+    box-shadow: 3px 3px 8px rgb(73, 73, 73), -3px -3px 8px white;
+    overflow: hidden;
 }
 
-.button:hover,
-.button:focus{
-    background-color: rgb(117, 177, 255);
+.button,
+.button img{
+    height: 100%;
+    transition: all .2s ease 0s;
+    background-color: rgb(168, 204, 250);
+}
+
+
+/* Einzelne Knopf animationen */
+.line:hover,
+.line:focus{
+    transform: scale(1.1);
+}
+.line:hover .button{
+    transform: rotate(-90deg);
+} 
+
+#input:hover,
+#input:focus{
+    transform: scale(1.04);
+}
+
+.reset:hover,
+.reset:focus{
+    transform: rotate(45deg);
+    box-shadow: 3px 0px 8px rgb(73, 73, 73), -3px 0px 8px white;
+}
+
+.reset .button{
+    transform: rotate(45deg);
+    transition: all .6s ease 0s;
+}
+.reset:hover .button,
+.reset:focus .button{
+    transform: rotate(315deg);
+}
+
+
+.slideshow:hover,
+.slideshow:focus{
+    transform: translateY(-12%) scale(1.06);
+    box-shadow: 7px 9px 9px rgb(73, 73, 73), -1px -1px 5px white;
+}
+
+
+.push-right:hover,
+.push-right:focus{
+    transform: rotate(-45deg);
+    box-shadow: 0px 3px 8px rgb(73, 73, 73), 0px -3px 8px white;
+}
+.push-right:hover .button{
+    transform: rotate(45deg) scale(1.2) translateX(-10%);
+}
+
+
+.next:hover,
+.next:focus{
+    transform: rotate(45deg);
+    box-shadow: 3px 0px 8px rgb(73, 73, 73), -3px 0px 8px white;
+}
+.next:hover .button{
+    transform: rotate(-45deg) scale(1.2) translateX(10%);
 }
