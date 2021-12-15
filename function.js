@@ -78,12 +78,14 @@ function collapse(){
         document.querySelector(".preview").style.transform = 'scaleY(0)'
         document.querySelector(".showing").style.bottom = '-50px'
         document.getElementById("line").src="/icons/plus.png";
+        document.querySelector(".line > div, .line > div > img").style.transition = 'none';
         
         open = false;
     } else{
         document.querySelector(".preview").style.transform = 'scaleY(1)'
         document.querySelector(".showing").style.bottom = '0'
         document.getElementById("line").src="/icons/line.png";
+        document.querySelector(".line > div, .line > div > img").style.transition = 'all .2s ease 0s';
        
         open = true;
     }
