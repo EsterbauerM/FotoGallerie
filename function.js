@@ -77,24 +77,22 @@ function collapse(){
     if(open){
         document.querySelector(".preview").style.transform = 'scaleY(0)';
         document.querySelector(".showing").style.bottom = '-50px';
-        // document.querySelector(".minus-line").style.transform="rotate(90deg)";
-        // document.querySelector(".line > div").style.transition = 'none';
+        document.querySelector(".minus-line").style.transform="rotate(90deg)";
         
         open = false;
     } else{
         document.querySelector(".preview").style.transform = 'scaleY(1)'
         document.querySelector(".showing").style.bottom = '0'
-        // document.querySelector(".minus-line").style.transform="rotate(0deg)";
-        // document.querySelector(".line > div").style.transition = 'all .2s ease 0s';
+        document.querySelector(".minus-line").style.transform="rotate(0deg)";
         
         open = true;
     }
 }
 
 function resetTiming(){
+    window.clearInterval(interval);
     document.getElementById("input").value="";
     document.getElementById("slideshow").style.backgroundColor="rgb(168, 204, 250)";
-    window.clearInterval(interval);
 
     time=2000;
 }

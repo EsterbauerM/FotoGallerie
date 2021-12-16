@@ -1,0 +1,294 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #3b3b3b;
+  font-family: "Montserrat", sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html, body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.galary {
+  margin: auto;
+  border-radius: 5px;
+  background-color: lightgray;
+  padding: 1rem;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  position: relative;
+}
+
+/* Zeigendes Bild */
+.showing {
+  padding: .5rem;
+  border-radius: 5px;
+  line-height: 0;
+  background-color: white;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  position: relative;
+  bottom: 0;
+}
+
+/* Vorschau Bilder */
+.preview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  border-radius: 5px;
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  margin: .2rem 0;
+  padding: .5rem 0;
+  line-height: 0;
+  background-color: white;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  opacity: 1;
+}
+
+.preview div {
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  opacity: 40%;
+  cursor: pointer;
+}
+
+.preview div:hover, .preview div:focus {
+  opacity: 100% !important;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 3px 3px 5px gray;
+          box-shadow: 3px 3px 5px gray;
+}
+
+/* Navigations Knöpfe/Eingabe */
+.nav {
+  margin-top: 1.1rem;
+  height: 3rem;
+}
+
+.nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  background-color: lightgray;
+  height: 100%;
+}
+
+.nav li {
+  margin: 0 .5rem;
+  cursor: pointer;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  border-radius: 5px;
+  background-color: #a8ccfa;
+  -webkit-box-shadow: 3px 3px 8px #494949, -3px -3px 8px white;
+          box-shadow: 3px 3px 8px #494949, -3px -3px 8px white;
+  overflow: hidden;
+}
+
+.push-right {
+  /* Damit die vor-/zurück und der Slideshow Knöpfe rechts sind */
+  margin-left: auto !important;
+}
+
+.line {
+  width: 3rem;
+  position: relative;
+}
+
+.minus-line {
+  position: relative;
+  background-color: black;
+  height: 4px;
+  width: 70%;
+  border-radius: 2px;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+}
+
+.plus-line {
+  position: absolute;
+  background-color: black;
+  height: 4px;
+  width: 70%;
+  border-radius: 2px;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+}
+
+#input {
+  height: 100%;
+  background-color: #a8ccfa;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 1.5px;
+  cursor: text;
+  margin: 0 .5rem;
+  -webkit-box-shadow: 3px 3px 8px #494949, -3px -3px 8px white;
+          box-shadow: 3px 3px 8px #494949, -3px -3px 8px white;
+}
+
+.button,
+.button img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  background-color: #a8ccfa;
+}
+
+/* NAV animationen */
+/*========== PREVIEWS AUSBLENDEN ==========*/
+.line:hover, .line:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.line:active .button {
+  background-color: #6f9edb;
+}
+
+/*========== TIMER INPUT FELD ==========*/
+#input:hover, #input:focus {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+/*========== TIMER RESET KNOPF ==========*/
+.reset:hover, .reset:focus {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
+          box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
+}
+
+.reset:hover .button, .reset:focus .button {
+  -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+}
+
+.reset .button {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all .6s ease 0s;
+  transition: all .6s ease 0s;
+}
+
+.reset:active #reset, .reset:active {
+  background-color: #6f9edb;
+}
+
+/*========== SLIDESHOW KNOPF ==========*/
+.slideshow:hover, .slideshow:focus {
+  -webkit-transform: translateY(-12%) scale(1.06);
+          transform: translateY(-12%) scale(1.06);
+  -webkit-box-shadow: 7px 9px 9px #494949, -1px -1px 5px white;
+          box-shadow: 7px 9px 9px #494949, -1px -1px 5px white;
+  -webkit-transition: all .08s ease-in-out 0s;
+  transition: all .08s ease-in-out 0s;
+}
+
+.slideshow:active {
+  -webkit-transform: translateY(-6%) scale(1.04);
+          transform: translateY(-6%) scale(1.04);
+  -webkit-box-shadow: 5px 6px 7px #494949, -2px -2px 5px white;
+          box-shadow: 5px 6px 7px #494949, -2px -2px 5px white;
+}
+
+/*========== LINKS-PFEIL KNOPF ==========*/
+.push-right:hover, .push-right:focus {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-box-shadow: 0px 3px 8px #494949, 0px -3px 8px white;
+          box-shadow: 0px 3px 8px #494949, 0px -3px 8px white;
+}
+
+.push-right:hover .button, .push-right:focus .button {
+  -webkit-transform: rotate(45deg) scale(1.2) translateX(-10%);
+          transform: rotate(45deg) scale(1.2) translateX(-10%);
+}
+
+.push-right:active {
+  background-color: #6f9edb;
+}
+
+.push-right:active .button {
+  -webkit-transition: all .1s ease 0s;
+  transition: all .1s ease 0s;
+  -webkit-transform: rotate(45deg) scale(1.2) translateX(-15%);
+          transform: rotate(45deg) scale(1.2) translateX(-15%);
+}
+
+.push-right:active #previous {
+  background-color: #6f9edb;
+}
+
+/*========== RECHTS-PFEIL KNOPF ==========*/
+.next:hover, .next:focus {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
+          box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
+}
+
+.next:hover .button, .next:focus .button {
+  -webkit-transform: rotate(-45deg) scale(1.2) translateX(10%);
+          transform: rotate(-45deg) scale(1.2) translateX(10%);
+}
+
+.next:active {
+  background-color: #6f9edb;
+}
+
+.next:active .button {
+  -webkit-transition: all .1s ease 0s;
+  transition: all .1s ease 0s;
+  -webkit-transform: rotate(-45deg) scale(1.2) translateX(15%);
+          transform: rotate(-45deg) scale(1.2) translateX(15%);
+}
+
+.next:active #next {
+  background-color: #6f9edb;
+}
+/*# sourceMappingURL=style.css.map */
