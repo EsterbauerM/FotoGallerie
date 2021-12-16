@@ -77,14 +77,14 @@ function collapse(){
     if(open){
         document.querySelector(".preview").style.transform = 'scaleY(0)';
         document.querySelector(".showing").style.bottom = '-50px';
-        document.querySelector(".minus-line").style.transform="rotate(90deg)";
+        // document.querySelector(".minus-line").style.transform="rotate(90deg)";
         // document.querySelector(".line > div").style.transition = 'none';
         
         open = false;
     } else{
         document.querySelector(".preview").style.transform = 'scaleY(1)'
         document.querySelector(".showing").style.bottom = '0'
-        document.querySelector(".minus-line").style.transform="rotate(0deg)";
+        // document.querySelector(".minus-line").style.transform="rotate(0deg)";
         // document.querySelector(".line > div").style.transition = 'all .2s ease 0s';
         
         open = true;

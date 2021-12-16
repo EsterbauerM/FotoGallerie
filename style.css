@@ -92,20 +92,19 @@ img {
     position: relative;
 }
 
-.minus-line{
-    background-color: rgb(0, 0, 0);
-    height: 4px;
-    width: 75%;
-    border-radius: 2px;
-    transition: all .2s ease 0s;
-    position: relative;
-}
-.plus-line{
-    background-color: rgb(0, 0, 0);
-    height: 4px;
-    width: 75%;
-    border-radius: 2px;
+#toggle{
     position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+}
+
+input[type="checkbox"]{
+    visibility: hidden;
+    &:checked +label{
+        transform: rotate:(90deg);
+    }
 }
 
 #input{
@@ -144,16 +143,6 @@ img {
     background-color: rgb(168, 204, 250);
 }
 
-
-/* #btnControl{
-    display: none;
-}
-
-#btnControl:checked+label > div{
-    transform: rotate(45deg);
-} */
-
-
 /* NAV animationen */
 
 /*========== PREVIEWS AUSBLENDEN ==========*/
@@ -161,6 +150,7 @@ img {
 .line:focus{
     transform: scale(1.1);
 }
+
 
 /*========== TIMER INPUT FELD ==========*/
 #input:hover,
@@ -193,10 +183,10 @@ img {
 
 .slideshow:active{
     transform: translateY(-6%) scale(1.04);
-    box-shadow: 6px 7px 9px rgb(73, 73, 73), -2px -2px 5px white;
+    box-shadow: 5px 6px 7px rgb(73, 73, 73), -2px -2px 5px white;
 }
 
-/*========== LINK-PFEIL KNOPF ==========*/
+/*========== LINKS-PFEIL KNOPF ==========*/
 .push-right:hover,
 .push-right:focus{
     transform: rotate(-45deg);
@@ -204,6 +194,16 @@ img {
 }
 .push-right:hover .button{
     transform: rotate(45deg) scale(1.2) translateX(-10%);
+}
+
+.push-right:active .button{
+    transition: all .1s ease 0s;
+    transform: rotate(45deg) scale(1.2) translateX(-15%);
+}
+
+.push-right:active,
+.push-right:active #previous{
+    background-color: rgb(111, 158, 219);
 }
 
 /*========== RECHTS-PFEIL KNOPF ==========*/
@@ -215,3 +215,14 @@ img {
 .next:hover .button{
     transform: rotate(-45deg) scale(1.2) translateX(10%);
 }
+
+.next:active .button{
+    transition: all .1s ease 0s;
+    transform: rotate(-45deg) scale(1.2) translateX(15%);
+}
+
+.next:active,
+.next:active #next{
+    background-color: rgb(111, 158, 219);
+}
+
