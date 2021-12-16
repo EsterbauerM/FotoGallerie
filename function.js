@@ -86,7 +86,7 @@ function collapse(){
         document.querySelector(".showing").style.bottom = '0'
         document.querySelector(".minus-line").style.transform="rotate(0deg)";
         // document.querySelector(".line > div").style.transition = 'all .2s ease 0s';
-       
+        
         open = true;
     }
 }
