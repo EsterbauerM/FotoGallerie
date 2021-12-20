@@ -30,6 +30,7 @@ img {
 /* Zeigendes Bild */
 
 .showing{
+    display: inline-flex;
     padding: .5rem;
     border-radius: 5px;
     line-height: 0;
@@ -79,6 +80,7 @@ img {
         height: 100%;
     }
     & li{
+        width: 3rem;
         margin: 0 .5rem;
         cursor: pointer;
         transition: all .2s ease 0s;
@@ -140,6 +142,7 @@ img {
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
     transition: all .2s ease 0s;
     background-color: rgb(168, 204, 250);
 }
@@ -149,7 +152,7 @@ $click-bg: rgb(111, 158, 219);
 
 /*========== PREVIEWS AUSBLENDEN ==========*/
 .line{
-    &:hover, &:focus{
+    &:hover{
         transform: scale(1.1);
     }
     &:active .button{
@@ -161,30 +164,33 @@ $click-bg: rgb(111, 158, 219);
 #input{
     &:hover, &:focus{
         transform: scale(1.04);
+        outline: none;
     }
 }
 
 /*========== TIMER RESET KNOPF ==========*/
 .reset{
-    &:hover, &:focus{
+    &:hover{
         transform: rotate(45deg);
         box-shadow: 3px 0px 8px rgb(73, 73, 73), -3px 0px 8px white;
         & .button{
-            transform: rotate(315deg);
+            transform: rotate(315deg)
         }
     }
     & .button{
-        transform: rotate(45deg);
-        transition: all .6s ease 0s;
+        transition: all .5s ease;
     }
-    &:active #reset, &:active{
+    &:active{
         background-color: $click-bg;
+        & #reset{
+            background-color: $click-bg;
+        }
     }
 }
 
 /*========== SLIDESHOW KNOPF ==========*/
 .slideshow{
-    &:hover, &:focus{
+    &:hover{
         transform: translateY(-12%) scale(1.06);
         box-shadow: 7px 9px 9px rgb(73, 73, 73), -1px -1px 5px white;
         transition: all .08s ease-in-out 0s;
@@ -197,7 +203,7 @@ $click-bg: rgb(111, 158, 219);
 
 /*========== LINKS-PFEIL KNOPF ==========*/
 .push-right{
-    &:hover, &:focus{
+    &:hover{
         transform: rotate(-45deg);
         box-shadow: 0px 3px 8px rgb(73, 73, 73), 0px -3px 8px white;
         & .button{
@@ -219,7 +225,7 @@ $click-bg: rgb(111, 158, 219);
 
 /*========== RECHTS-PFEIL KNOPF ==========*/
 .next{
-    &:hover, &:focus{
+    &:hover{
         transform: rotate(45deg);
         box-shadow: 3px 0px 8px rgb(73, 73, 73), -3px 0px 8px white;
         & .button{
