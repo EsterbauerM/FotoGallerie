@@ -2,43 +2,56 @@ var pics = new Array("/pics/img_01.jpg", "/pics/img_02.jpg", "/pics/img_03.jpg",
 var thumb = new Array("/pics/thumb_01.jpg", "/pics/thumb_02.jpg", "/pics/thumb_03.jpg", "/pics/thumb_04.jpg", "/pics/thumb_05.jpg", "/pics/thumb_06.jpg");
 
 var pos=0;
+var posBefore = 0;
 var time=2000;
 
 window.onload = function (){
 
+    imageLoader();
+
+    showing();
+    
     document.getElementById ("previous").onclick = previousImg;
 
     document.getElementById("slideshow").onclick = stop;
 
     document.getElementById("next").onclick = nextImg;
 
-    document.getElementsByClassName("preview").onclick = showing;
-
     document.querySelector(".line").onclick=collapse;
 
     document.getElementById("reset").onclick=resetTiming;
 }
 
-function showing(){
+function imageLoader() {
 
-    for(var i=0;i<pics.length;i++)
-        document.getElementById(thumb[i]).style.opacity="40%";
-
-    document.getElementById(thumb[pos]).style.opacity="100%";
+    var bigImg = document.createElement("img");
+    document.querySelector(".showing").appendChild(bigImg);
+    
+    for(var i=0;i<thumb.length;i++){
+        var smallImg = document.createElement("img");
+        var att = document.createAttribute("id");
+        smallImg.src=thumb[i];
+        att.value = i;
+        smallImg.setAttributeNode(att);
+        document.querySelector(".preview").appendChild(smallImg);
+    }
 }
 
-function change_img(num){
-    var showing_img = document.getElementById("showing_img").src = pics[num];
-    pos = num;
+document.querySelector(".preview").addEventListener('click',(e) => { 
+    clickSelectPass(Array.from(document.querySelectorAll("img")).indexOf(e.target));
+})
+
+function clickSelectPass(clicked) {
+    posBefore = pos;
+    pos = clicked-1;
+    document.querySelector('.showing img').src = pics[pos];
     showing();
 }
 
-function previousImg(){
-    pos--;
-    if(pos<0)
-        pos = (pics.length)-1;
-    document.getElementById("showing_img").src = pics[pos];
-    showing();
+function showing() {
+    document.getElementById(posBefore).style.opacity="40%";
+    document.querySelector(".showing img").src = pics[pos];
+    document.getElementById(pos).style.opacity="100%";
 }
 
 let interval = null;
@@ -57,11 +70,19 @@ function stop(){
     }
 }
 
+function previousImg(){
+    posBefore = pos;
+    pos--;
+    if(pos<0)
+        pos = (pics.length)-1;
+    showing();
+}
+
 function nextImg(){
+    posBefore = pos;
     pos++;
     if(pos==pics.length)
         pos=0;
-    document.getElementById("showing_img").src = pics[pos];
     showing();
 }
 

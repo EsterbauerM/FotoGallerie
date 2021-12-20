@@ -74,14 +74,14 @@ img {
   opacity: 1;
 }
 
-.preview div {
+.preview img {
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
   opacity: 40%;
   cursor: pointer;
 }
 
-.preview div:hover, .preview div:focus {
+.preview img:hover, .preview img:focus {
   opacity: 100% !important;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
