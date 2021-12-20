@@ -41,6 +41,9 @@ img {
 
 /* Zeigendes Bild */
 .showing {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   padding: .5rem;
   border-radius: 5px;
   line-height: 0;
@@ -71,14 +74,14 @@ img {
   opacity: 1;
 }
 
-.preview div {
+.preview img {
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
   opacity: 40%;
   cursor: pointer;
 }
 
-.preview div:hover, .preview div:focus {
+.preview img:hover, .preview img:focus {
   opacity: 100% !important;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -102,6 +105,7 @@ img {
 }
 
 .nav li {
+  width: 3rem;
   margin: 0 .5rem;
   cursor: pointer;
   -webkit-transition: all .2s ease 0s;
@@ -173,6 +177,7 @@ img {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  width: 100%;
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
   background-color: #a8ccfa;
@@ -180,7 +185,7 @@ img {
 
 /* NAV animationen */
 /*========== PREVIEWS AUSBLENDEN ==========*/
-.line:hover, .line:focus {
+.line:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
@@ -193,34 +198,37 @@ img {
 #input:hover, #input:focus {
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
+  outline: none;
 }
 
 /*========== TIMER RESET KNOPF ==========*/
-.reset:hover, .reset:focus {
+.reset:hover {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
           box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
 }
 
-.reset:hover .button, .reset:focus .button {
+.reset:hover .button {
   -webkit-transform: rotate(315deg);
           transform: rotate(315deg);
 }
 
 .reset .button {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: all .6s ease 0s;
-  transition: all .6s ease 0s;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
-.reset:active #reset, .reset:active {
+.reset:active {
+  background-color: #6f9edb;
+}
+
+.reset:active #reset {
   background-color: #6f9edb;
 }
 
 /*========== SLIDESHOW KNOPF ==========*/
-.slideshow:hover, .slideshow:focus {
+.slideshow:hover {
   -webkit-transform: translateY(-12%) scale(1.06);
           transform: translateY(-12%) scale(1.06);
   -webkit-box-shadow: 7px 9px 9px #494949, -1px -1px 5px white;
@@ -237,14 +245,14 @@ img {
 }
 
 /*========== LINKS-PFEIL KNOPF ==========*/
-.push-right:hover, .push-right:focus {
+.push-right:hover {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
   -webkit-box-shadow: 0px 3px 8px #494949, 0px -3px 8px white;
           box-shadow: 0px 3px 8px #494949, 0px -3px 8px white;
 }
 
-.push-right:hover .button, .push-right:focus .button {
+.push-right:hover .button {
   -webkit-transform: rotate(45deg) scale(1.2) translateX(-10%);
           transform: rotate(45deg) scale(1.2) translateX(-10%);
 }
@@ -265,14 +273,14 @@ img {
 }
 
 /*========== RECHTS-PFEIL KNOPF ==========*/
-.next:hover, .next:focus {
+.next:hover {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
           box-shadow: 3px 0px 8px #494949, -3px 0px 8px white;
 }
 
-.next:hover .button, .next:focus .button {
+.next:hover .button {
   -webkit-transform: rotate(-45deg) scale(1.2) translateX(10%);
           transform: rotate(-45deg) scale(1.2) translateX(10%);
 }
