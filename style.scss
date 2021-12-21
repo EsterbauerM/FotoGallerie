@@ -4,7 +4,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: rgb(59, 59, 59);
     font-family: "Montserrat", sans-serif;
     user-select: none;
 }
@@ -13,19 +12,40 @@ html,body{
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 100%;
+    height: 100vh;
 }
+
+html{
+    background-image: url(/pics/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 img {
     max-width: 100%;
 }
+
 .galary{
     margin: auto;
     border-radius: 5px;
-    background-color: lightgray;
-    padding: 1rem;
+    background-color: rgba(216, 216, 216, 0.404);
+    padding: 6rem;
     transition: all .2s ease 0s;
     position: relative;
 }
+
+.galary:before{
+    content: "";
+    margin: auto;
+    border-radius: 5px;
+    background-color: rgba(201, 201, 201, 0.233);
+    padding: 6rem;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    filter: blur(10px);
+}
+
 
 /* Zeigendes Bild */
 
@@ -47,7 +67,8 @@ img {
     justify-content:space-evenly; 
     border-radius: 5px;
     transform-origin: bottom;
-    margin: .2rem 0;
+    margin: 1rem 0;
+    margin-bottom: 5rem;
     padding: .5rem 0;
     line-height: 0;
     background-color: white;
@@ -71,7 +92,6 @@ img {
 /* Navigations Knöpfe/Eingabe */
 
 .nav{
-    margin-top: 1.1rem;
     height: 3rem;
     & ul{
         display: flex;
