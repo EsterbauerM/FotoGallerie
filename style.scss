@@ -21,31 +21,16 @@ html{
     background-repeat: no-repeat;
 }
 
-img {
-    max-width: 100%;
-}
-
 .galary{
     margin: auto;
     border-radius: 5px;
-    background-color: rgba(216, 216, 216, 0.404);
+    background-color: rgba(255, 255, 255, 0.288);
     padding: 6rem;
     transition: all .2s ease 0s;
     position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid darkgray;
 }
-
-.galary:before{
-    content: "";
-    margin: auto;
-    border-radius: 5px;
-    background-color: rgba(201, 201, 201, 0.233);
-    padding: 6rem;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    filter: blur(10px);
-}
-
 
 /* Zeigendes Bild */
 
@@ -54,7 +39,7 @@ img {
     padding: .5rem;
     border-radius: 5px;
     line-height: 0;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     transition: all .2s ease 0s;
     position: relative;
     bottom: 0;
@@ -71,7 +56,8 @@ img {
     margin-bottom: 5rem;
     padding: .5rem 0;
     line-height: 0;
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken, luminosity;
     transition: all .2s ease 0s;
     opacity: 1;
 }
@@ -81,11 +67,12 @@ img {
     transition: all .2s ease 0s;
     opacity: 40%;
     cursor: pointer;
+    transform: scale(1);
 
     &:hover, &:focus{
         opacity: 100% !important;
-        transform: scale(1.1);
-        box-shadow: 3px 3px 5px gray;
+        transform: scale(1.1) !important;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .5);
     }
 }
 
@@ -96,7 +83,6 @@ img {
     & ul{
         display: flex;
         list-style: none;
-        background-color: lightgray;
         height: 100%;
     }
     & li{
@@ -105,10 +91,8 @@ img {
         cursor: pointer;
         transition: all .2s ease 0s;
         border-radius: 5px;
-        background-color: rgb(168, 204, 250);
-        box-shadow: 3px 3px 8px rgb(73, 73, 73), -3px -3px 8px white;
+        background-color: rgb(121, 179, 255);
         overflow: hidden;
-    
     }
 }
 
@@ -142,7 +126,7 @@ img {
 
 #input{
     height: 100%;
-    background-color: rgb(168, 204, 250);
+    background-color: rgb(121, 179, 255);
     transition: all .2s ease 0s;
     border: 1px solid black;
     border-radius: 5px;
@@ -153,7 +137,6 @@ img {
     letter-spacing: 1.5px;
     cursor: text;
     margin: 0 .5rem;
-    box-shadow: 3px 3px 8px rgb(73, 73, 73), -3px -3px 8px white;
 }
 
 .button,
@@ -164,11 +147,11 @@ img {
     height: 100%;
     width: 100%;
     transition: all .2s ease 0s;
-    background-color: rgb(168, 204, 250);
+    background-color: rgb(121, 179, 255);
 }
 
 /* NAV animationen */
-$click-bg: rgb(111, 158, 219);
+$click-bg: rgb(95, 145, 209);
 
 /*========== PREVIEWS AUSBLENDEN ==========*/
 .line{
@@ -192,7 +175,6 @@ $click-bg: rgb(111, 158, 219);
 .reset{
     &:hover{
         transform: rotate(45deg);
-        box-shadow: 3px 0px 8px rgb(73, 73, 73), -3px 0px 8px white;
         & .button{
             transform: rotate(315deg)
         }
@@ -212,12 +194,13 @@ $click-bg: rgb(111, 158, 219);
 .slideshow{
     &:hover{
         transform: translateY(-12%) scale(1.06);
-        box-shadow: 7px 9px 9px rgb(73, 73, 73), -1px -1px 5px white;
         transition: all .08s ease-in-out 0s;
+        box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.5);
+
     }
     &:active{
         transform: translateY(-6%) scale(1.04);
-        box-shadow: 5px 6px 7px rgb(73, 73, 73), -2px -2px 5px white;
+        box-shadow: 5px 6px 7px rgba(73, 73, 73, 0.5);
     }
 }
 
@@ -225,7 +208,6 @@ $click-bg: rgb(111, 158, 219);
 .push-right{
     &:hover{
         transform: rotate(-45deg);
-        box-shadow: 0px 3px 8px rgb(73, 73, 73), 0px -3px 8px white;
         & .button{
             transform: rotate(45deg) scale(1.2) translateX(-10%);
         }
@@ -247,7 +229,6 @@ $click-bg: rgb(111, 158, 219);
 .next{
     &:hover{
         transform: rotate(45deg);
-        box-shadow: 3px 0px 8px rgb(73, 73, 73), -3px 0px 8px white;
         & .button{
             transform: rotate(-45deg) scale(1.2) translateX(10%);
         }

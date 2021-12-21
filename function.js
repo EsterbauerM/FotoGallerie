@@ -64,7 +64,7 @@ function stop(){
         document.getElementById("slideshow").style.backgroundColor="rgb(97, 212, 97)";
     } else {
         document.getElementById("input").value="";
-        document.getElementById("slideshow").style.backgroundColor="rgb(168, 204, 250)";
+        document.getElementById("slideshow").style.backgroundColor="rgb(121, 179, 255)";
         window.clearInterval(interval);
         interval = null;
     }
@@ -97,14 +97,16 @@ let open = true;
 function collapse(){
     if(open){
         document.querySelector(".preview").style.transform = 'scaleY(0)';
-        document.querySelector(".showing").style.bottom = '-50px';
+        document.querySelector(".showing").style.bottom = '-60px';
         document.querySelector(".minus-line").style.transform="rotate(90deg)";
+        document.querySelector(".showing").style.transform="scale(1.2)";
         
         open = false;
     } else{
         document.querySelector(".preview").style.transform = 'scaleY(1)'
         document.querySelector(".showing").style.bottom = '0'
         document.querySelector(".minus-line").style.transform="rotate(0deg)";
+        document.querySelector(".showing").style.transform="scale(1)";
         
         open = true;
     }
