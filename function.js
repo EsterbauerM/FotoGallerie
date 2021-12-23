@@ -62,9 +62,11 @@ function stop(){
         interval = window.setInterval(() => {nextImg() },time)
         nextImg()
         document.getElementById("slideshow").style.backgroundColor="rgb(97, 212, 97)";
+        document.querySelector(".slideshow").style.backgroundColor="rgb(97, 212, 97)";
     } else {
         document.getElementById("input").value="";
         document.getElementById("slideshow").style.backgroundColor="rgb(121, 179, 255)";
+        document.querySelector(".slideshow").style.backgroundColor="rgb(121, 179, 255)";
         window.clearInterval(interval);
         interval = null;
     }
@@ -115,7 +117,7 @@ function collapse(){
 function resetTiming(){
     window.clearInterval(interval);
     document.getElementById("input").value="";
-    document.getElementById("slideshow").style.backgroundColor="rgb(168, 204, 250)";
+    document.getElementById("slideshow").style.backgroundColor="rgb(121, 179, 255)";
 
     time=2000;
 }

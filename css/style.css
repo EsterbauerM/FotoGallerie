@@ -35,27 +35,25 @@ html {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.288);
   padding: 6rem;
-  -webkit-transition: all .2s ease 0s;
-  transition: all .2s ease 0s;
   position: relative;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  border: 1px solid darkgray;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Zeigendes Bild */
 .showing {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   padding: .5rem;
   border-radius: 5px;
-  line-height: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: all .2s ease 0s;
-  transition: all .2s ease 0s;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   position: relative;
   bottom: 0;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  line-height: 0;
 }
 
 /* Vorschau Bilder */
@@ -73,8 +71,9 @@ html {
   margin-bottom: 5rem;
   padding: .5rem 0;
   line-height: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: darken, luminosity;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
   opacity: 1;
@@ -167,6 +166,28 @@ html {
   margin: 0 .5rem;
 }
 
+.slideshow-l1 {
+  position: absolute;
+  background-color: black;
+  height: 4px;
+  width: 70%;
+  border-radius: 2px;
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
+  opacity: 0;
+}
+
+.slideshow-l2 {
+  margin: auto;
+  position: relative;
+  background-color: black;
+  height: 4px;
+  width: 90%;
+  border-radius: 2px;
+  -webkit-transition: all .2s ease .15s;
+  transition: all .2s ease .15s;
+}
+
 .button,
 .button img {
   display: -webkit-box;
@@ -182,7 +203,6 @@ html {
   width: 100%;
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
-  background-color: #79b3ff;
 }
 
 /* NAV animationen */
@@ -228,13 +248,32 @@ html {
 }
 
 /*========== SLIDESHOW KNOPF ==========*/
+.slideshow {
+  position: relative;
+}
+
 .slideshow:hover {
   -webkit-transform: translateY(-12%) scale(1.06);
           transform: translateY(-12%) scale(1.06);
-  -webkit-transition: all .08s ease-in-out 0s;
-  transition: all .08s ease-in-out 0s;
-  -webkit-box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.5);
-          box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.5);
+  -webkit-box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.7);
+          box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.7);
+}
+
+.slideshow:hover .button {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+}
+
+.slideshow:hover .slideshow-l1 {
+  -webkit-transform: translateY(-17px);
+          transform: translateY(-17px);
+  opacity: 1;
+}
+
+.slideshow:hover .slideshow-l2 {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+  opacity: 1;
 }
 
 .slideshow:active {
