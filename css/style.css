@@ -43,6 +43,8 @@ html {
           backdrop-filter: blur(10px);
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all .4s ease 0s;
+  transition: all .4s ease 0s;
 }
 
 /* Zeigendes Bild */
@@ -79,6 +81,12 @@ html {
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
   opacity: 1;
+  z-index: 1;
+}
+
+.preview:hover img {
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
 }
 
 .preview img {
