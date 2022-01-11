@@ -36,9 +36,6 @@ function imageLoader() {
         document.querySelector(".preview").appendChild(smallImg);
     }
     
-    for(var i=0; i<pics.length;i++){
-        document.querySelector(".showing img").src = pics[i];
-    }
 }
 
 document.querySelector(".preview").addEventListener('click',(e) => { 
@@ -54,8 +51,10 @@ function clickSelectPass(clicked) {
 
 function showing() {
     document.getElementById(posBefore).style.opacity="40%";
+    document.getElementById(posBefore).style.transform="scale(1)";
     document.querySelector(".showing img").src = pics[pos];
     document.getElementById(pos).style.opacity="100%";
+    document.getElementById(pos).style.transform="scale(110%)";
 }
 
 let interval = null;
@@ -67,6 +66,7 @@ function stop(){
         nextImg()
         document.getElementById("slideshow").style.backgroundColor="rgb(97, 212, 97)";
         document.querySelector(".slideshow").style.backgroundColor="rgb(97, 212, 97)";
+        
     } else {
         document.getElementById("input").value="";
         document.getElementById("slideshow").style.backgroundColor="rgb(121, 179, 255)";
@@ -106,13 +106,15 @@ function collapse(){
         document.querySelector(".preview").style.transition = 'all .2s ease';
         document.querySelector(".minus-line").style.transform="rotate(90deg)";
         document.querySelector(".showing").style.transform="scale(1.2) translateY(60px)";
+        document.querySelector(".galary").style.paddingInline="7rem";
         
         open = false;
     } else{
-        document.querySelector(".preview").style.transition = 'all .2s ease .1s';
+        document.querySelector(".preview").style.transition = 'all .2s ease .2s';
         document.querySelector(".preview").style.transform = 'scaleY(1)';
         document.querySelector(".minus-line").style.transform="rotate(0deg)";
         document.querySelector(".showing").style.transform="scale(1)";
+        document.querySelector(".galary").style.paddingInline="2rem";
         
         open = true;
     }
