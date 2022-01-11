@@ -14,7 +14,9 @@ html,body{
     align-content: center;
     height: 100vh;
 }
-
+img {
+    max-width: 100%;
+}
 html{
     background-image: url(/pics/background.jpg);
     background-size: cover;
@@ -22,11 +24,10 @@ html{
 }
 
 .galary{
-    margin: auto;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.288);
-    padding: 6rem;
-    position: relative;
+    padding: 2rem;
+    margin:  auto;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .3);
 }
@@ -38,9 +39,7 @@ html{
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
-    position: relative;
-    bottom: 0;
-    transition: all .2s ease 0s;
+    transition: all .4s ease 0s;
     line-height: 0;
 }
 
@@ -52,8 +51,8 @@ html{
     border-radius: 5px;
     transform-origin: bottom;
     margin: 1rem 0;
+    flex-wrap: wrap;
     margin-bottom: 5rem;
-    padding: .5rem 0;
     line-height: 0;
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 0 0 10px rgba(0, 0, 0, .3);
@@ -66,6 +65,7 @@ html{
     transition: all .2s ease 0s;
     opacity: 40%;
     cursor: pointer;
+    margin: .5rem 0;
     transform: scale(1);
 
     &:hover, &:focus{
@@ -78,15 +78,21 @@ html{
 /* Navigations Knöpfe/Eingabe */
 
 .nav{
-    height: 3rem;
+    
     & ul{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         list-style: none;
-        height: 100%;
+        flex-wrap: wrap-reverse;
+    }
+
+    & li, & #input{
+        height: 50px;
     }
     & li{
-        width: 3rem;
-        margin: 0 .5rem;
+        width: 50px;
+        margin: .5rem;
         cursor: pointer;
         transition: all .2s ease 0s;
         border-radius: 5px;
@@ -124,7 +130,7 @@ html{
 }
 
 #input{
-    height: 100%;
+    max-width: 65%;
     background-color: rgb(121, 179, 255);
     transition: all .2s ease 0s;
     border: 1px solid black;
@@ -135,7 +141,7 @@ html{
     text-align: center;
     letter-spacing: 1.5px;
     cursor: text;
-    margin: 0 .5rem;
+    margin: .5rem;
 }
 
 .slideshow-l1{
@@ -145,17 +151,21 @@ html{
     width: 70%;
     border-radius: 2px;
     transition: all .2s ease 0s;
+    top: 25%;
     opacity: 0;
 }
 
-.slideshow-l2{
-    margin: auto;
-    position: relative;
+.slideshow-l1::after{
+    content: "";
+    position: absolute;
     background-color: black;
-    height: 4px;
+    height: 100%;
     width: 90%;
     border-radius: 2px;
-    transition: all .2s ease .15s;
+    transition: all .2s ease .1s;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .button,
@@ -202,37 +212,32 @@ $click-bg: rgb(95, 145, 209);
     }
     &:active{
         background-color: $click-bg;
-        & #reset{
-            background-color: $click-bg;
-        }
     }
 }
 
 /*========== SLIDESHOW KNOPF ==========*/
 .slideshow{
     position: relative;
+
     &:hover{
-        transform: translateY(-12%) scale(1.06);
-        // transition: all .08s ease-in-out 0s;
-        box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.7);
+        transition: all .08s ease-in-out 0s;
 
         & .button{
             transform: translateY(6px);
         }
 
         & .slideshow-l1{
-            transform: translateY(-17px);
+            transform: translateY(-7px);
             opacity: 1;
         }
 
-        & .slideshow-l2{
-            transform: translateY(-6px);
+        & .slideshow-l1::after{
+            transform: translate(-50%, -6px);
             opacity: 1;
         }
     }
     &:active{
-        transform: translateY(-6%) scale(1.04);
-        box-shadow: 5px 6px 7px rgba(73, 73, 73, 0.5);
+        transform: scale(.98);
     }
 }
 
@@ -248,12 +253,8 @@ $click-bg: rgb(95, 145, 209);
     &:active{
         background-color: $click-bg;
         & .button{
-            transition: all .1s ease 0s;
             transform: rotate(45deg) scale(1.2) translateX(-15%);
         }
-        & #previous{
-            background-color: $click-bg;
-        }        
     }
 }
 
@@ -267,12 +268,10 @@ $click-bg: rgb(95, 145, 209);
     }
     &:active{
         background-color: $click-bg;
+        transition: all .1s ease 0s;
+
         & .button{
-            transition: all .1s ease 0s;
             transform: rotate(-45deg) scale(1.2) translateX(15%);
-        }
-        & #next{
-            background-color: $click-bg;
         }
     }
 }

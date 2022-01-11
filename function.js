@@ -35,6 +35,10 @@ function imageLoader() {
         smallImg.setAttributeNode(att);
         document.querySelector(".preview").appendChild(smallImg);
     }
+    
+    for(var i=0; i<pics.length;i++){
+        document.querySelector(".showing img").src = pics[i];
+    }
 }
 
 document.querySelector(".preview").addEventListener('click',(e) => { 
@@ -99,14 +103,14 @@ let open = true;
 function collapse(){
     if(open){
         document.querySelector(".preview").style.transform = 'scaleY(0)';
-        document.querySelector(".showing").style.bottom = '-60px';
+        document.querySelector(".preview").style.transition = 'all .2s ease';
         document.querySelector(".minus-line").style.transform="rotate(90deg)";
-        document.querySelector(".showing").style.transform="scale(1.2)";
+        document.querySelector(".showing").style.transform="scale(1.2) translateY(60px)";
         
         open = false;
     } else{
-        document.querySelector(".preview").style.transform = 'scaleY(1)'
-        document.querySelector(".showing").style.bottom = '0'
+        document.querySelector(".preview").style.transition = 'all .2s ease .1s';
+        document.querySelector(".preview").style.transform = 'scaleY(1)';
         document.querySelector(".minus-line").style.transform="rotate(0deg)";
         document.querySelector(".showing").style.transform="scale(1)";
         
