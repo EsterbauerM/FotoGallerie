@@ -24,6 +24,10 @@ html, body {
   height: 100vh;
 }
 
+img {
+  max-width: 100%;
+}
+
 html {
   background-image: url(/pics/background.jpg);
   background-size: cover;
@@ -31,11 +35,10 @@ html {
 }
 
 .galary {
-  margin: auto;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.288);
-  padding: 6rem;
-  position: relative;
+  padding: 2rem;
+  margin: auto;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
   -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -49,10 +52,8 @@ html {
   background-color: rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-  bottom: 0;
-  -webkit-transition: all .2s ease 0s;
-  transition: all .2s ease 0s;
+  -webkit-transition: all .4s ease 0s;
+  transition: all .4s ease 0s;
   line-height: 0;
 }
 
@@ -68,8 +69,9 @@ html {
   -webkit-transform-origin: bottom;
           transform-origin: bottom;
   margin: 1rem 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 5rem;
-  padding: .5rem 0;
   line-height: 0;
   background-color: rgba(255, 255, 255, 0.2);
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -84,6 +86,7 @@ html {
   transition: all .2s ease 0s;
   opacity: 40%;
   cursor: pointer;
+  margin: .5rem 0;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -97,21 +100,28 @@ html {
 }
 
 /* Navigations Knöpfe/Eingabe */
-.nav {
-  height: 3rem;
-}
-
 .nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   list-style: none;
-  height: 100%;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+
+.nav li, .nav #input {
+  height: 50px;
 }
 
 .nav li {
-  width: 3rem;
-  margin: 0 .5rem;
+  width: 50px;
+  margin: .5rem;
   cursor: pointer;
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
@@ -151,7 +161,7 @@ html {
 }
 
 #input {
-  height: 100%;
+  max-width: 65%;
   background-color: #79b3ff;
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
@@ -163,7 +173,7 @@ html {
   text-align: center;
   letter-spacing: 1.5px;
   cursor: text;
-  margin: 0 .5rem;
+  margin: .5rem;
 }
 
 .slideshow-l1 {
@@ -174,18 +184,23 @@ html {
   border-radius: 2px;
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
+  top: 25%;
   opacity: 0;
 }
 
-.slideshow-l2 {
-  margin: auto;
-  position: relative;
+.slideshow-l1::after {
+  content: "";
+  position: absolute;
   background-color: black;
-  height: 4px;
+  height: 100%;
   width: 90%;
   border-radius: 2px;
-  -webkit-transition: all .2s ease .15s;
-  transition: all .2s ease .15s;
+  -webkit-transition: all .2s ease .1s;
+  transition: all .2s ease .1s;
+  opacity: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 
 .button,
@@ -243,20 +258,14 @@ html {
   background-color: #5f91d1;
 }
 
-.reset:active #reset {
-  background-color: #5f91d1;
-}
-
 /*========== SLIDESHOW KNOPF ==========*/
 .slideshow {
   position: relative;
 }
 
 .slideshow:hover {
-  -webkit-transform: translateY(-12%) scale(1.06);
-          transform: translateY(-12%) scale(1.06);
-  -webkit-box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.7);
-          box-shadow: 7px 9px 9px rgba(73, 73, 73, 0.7);
+  -webkit-transition: all .08s ease-in-out 0s;
+  transition: all .08s ease-in-out 0s;
 }
 
 .slideshow:hover .button {
@@ -265,22 +274,20 @@ html {
 }
 
 .slideshow:hover .slideshow-l1 {
-  -webkit-transform: translateY(-17px);
-          transform: translateY(-17px);
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px);
   opacity: 1;
 }
 
-.slideshow:hover .slideshow-l2 {
-  -webkit-transform: translateY(-6px);
-          transform: translateY(-6px);
+.slideshow:hover .slideshow-l1::after {
+  -webkit-transform: translate(-50%, -6px);
+          transform: translate(-50%, -6px);
   opacity: 1;
 }
 
 .slideshow:active {
-  -webkit-transform: translateY(-6%) scale(1.04);
-          transform: translateY(-6%) scale(1.04);
-  -webkit-box-shadow: 5px 6px 7px rgba(73, 73, 73, 0.5);
-          box-shadow: 5px 6px 7px rgba(73, 73, 73, 0.5);
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 
 /*========== LINKS-PFEIL KNOPF ==========*/
@@ -299,14 +306,8 @@ html {
 }
 
 .push-right:active .button {
-  -webkit-transition: all .1s ease 0s;
-  transition: all .1s ease 0s;
   -webkit-transform: rotate(45deg) scale(1.2) translateX(-15%);
           transform: rotate(45deg) scale(1.2) translateX(-15%);
-}
-
-.push-right:active #previous {
-  background-color: #5f91d1;
 }
 
 /*========== RECHTS-PFEIL KNOPF ==========*/
@@ -322,16 +323,12 @@ html {
 
 .next:active {
   background-color: #5f91d1;
+  -webkit-transition: all .1s ease 0s;
+  transition: all .1s ease 0s;
 }
 
 .next:active .button {
-  -webkit-transition: all .1s ease 0s;
-  transition: all .1s ease 0s;
   -webkit-transform: rotate(-45deg) scale(1.2) translateX(15%);
           transform: rotate(-45deg) scale(1.2) translateX(15%);
-}
-
-.next:active #next {
-  background-color: #5f91d1;
 }
 /*# sourceMappingURL=style.css.map */
