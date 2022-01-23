@@ -38,24 +38,19 @@ function imageLoader() {
         smallImg.setAttributeNode(classAtt);
         document.querySelector(".preview").appendChild(smallImg);
     }
-    
 }
-
-// document.querySelectorAll('.previewImg').forEach(item => {
-//     item.addEventListener('click', (e) => {
-//         clickSelectPass(Array.from(document.querySelectorAll(".previewImg")).indexOf(e.target));
-//     })
-// })
 
 document.querySelector(".preview").addEventListener('click',(e) => { 
     clickSelectPass(Array.from(document.querySelectorAll("img")).indexOf(e.target));
 })
 
 function clickSelectPass(clicked) {
-    posBefore = pos;
-    pos = clicked-1;
-    document.querySelector('.showing img').src = pics[pos];
-    showing();
+    if(clicked != -1){
+        posBefore = pos;
+        pos = clicked-1;
+        document.querySelector('.showing img').src = pics[pos];
+        showing();
+    }
 }
 
 function showing() {
