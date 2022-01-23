@@ -80,31 +80,31 @@ html {
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   -webkit-transition: all .2s ease 0s;
   transition: all .2s ease 0s;
-  opacity: 1;
-  z-index: 1;
 }
 
 .preview:hover img {
   -webkit-transform: scale(1) !important;
           transform: scale(1) !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .preview img {
-  -webkit-transition: all .2s ease 0s;
-  transition: all .2s ease 0s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
   opacity: 40%;
   cursor: pointer;
   margin: .5rem 0;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  -webkit-transition: all .2s ease 0s;
+  transition: all .2s ease 0s;
 }
 
 .preview img:hover, .preview img:focus {
   opacity: 100% !important;
   -webkit-transform: scale(1.1) !important;
           transform: scale(1.1) !important;
-  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5) !important;
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Navigations Knöpfe/Eingabe */
