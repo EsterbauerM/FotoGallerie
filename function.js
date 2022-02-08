@@ -18,7 +18,7 @@ window.onload = function (){
     document.getElementById("next").onclick = nextImg;
 
     document.querySelector(".line").onclick=collapse;
-
+    
     document.getElementById("reset").onclick=resetTiming;
 }
 
@@ -29,19 +29,19 @@ function imageLoader() {
     
     for(var i=0;i<thumb.length;i++){
         var smallImg = document.createElement("img");
-        var att = document.createAttribute("id");
-        var classAtt = document.createAttribute("class");
-        classAtt.value = "previewImg";
+        smallImg.setAttribute("id", i);
+        smallImg.setAttribute("class","previewImg");
         smallImg.src=thumb[i];
-        att.value = i;
-        smallImg.setAttributeNode(att);
-        smallImg.setAttributeNode(classAtt);
         document.querySelector(".preview").appendChild(smallImg);
     }
 }
 
 document.querySelector(".preview").addEventListener('click',(e) => { 
     clickSelectPass(Array.from(document.querySelectorAll("img")).indexOf(e.target));
+})
+
+document.querySelector(".showing").addEventListener('click',(e) => { 
+    collapse();
 })
 
 function clickSelectPass(clicked) {
