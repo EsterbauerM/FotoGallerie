@@ -45,7 +45,7 @@ document.querySelector(".showing").addEventListener('click',(e) => {
 })
 
 function clickSelectPass(clicked) {
-    if(clicked != -1){
+    if(clicked !== -1){
         posBefore = pos;
         pos = clicked-1;
         document.querySelector('.showing img').src = pics[pos];
