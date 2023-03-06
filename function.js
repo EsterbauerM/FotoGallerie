@@ -98,13 +98,13 @@ function previousImg(){
 function nextImg(){
     posBefore = pos;
     pos++;
-    if(pos==pics.length)
+    if(pos===pics.length)
         pos=0;
     showing();
 }
 
 function changeTiming(){
-    if(document.getElementById("input").value!=""){
+    if(document.getElementById("input").value!==""){
         time = document.getElementById("input").value;
         time = parseInt(time);
     }
